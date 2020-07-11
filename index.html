@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./node_modules/qrcodejs/jquery.min.js"></script>
+    <script type="text/javascript" src="./node_modules/qrcodejs/qrcode.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header_title">Design your Q</h1>
+    </header>
+
+    <section class="body">
+        <div class="qr-transform">
+            <label class="qr-transform_title" for="text-to-qr">Turn into qr code this: </label>
+            <div class="qr-transform_input">
+                <input type="text" id="text-to-qr">
+                <p>Eg: URL, Text, Phone Number, Location, ...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="qr-gallery">
+        <div class="qr-code">
+            <div class="qr-code_image" id="qr-code"></div>
+            <button class="qr-code_details">Details</button>
+        </div>
+    </section>
+
+    <!-- MY CODE-->
+    <script src="./js/index.js"></script>
+</body>
+</html>
