@@ -44,7 +44,7 @@ function myQr(){
     }
     else
     {
-        alert('Vacio!!!')
+        swal("Error", "Write the message that you want to convert ", "error");
     }
 }
 

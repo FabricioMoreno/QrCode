@@ -25,7 +25,6 @@ section.body
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    padding: 20px 10px 0px 10px;
     background-color: #eeecda;
 }
 section div.qr-transform{
@@ -47,7 +46,7 @@ label.qr-transform_title{
 
 }
 input.qr-transform_input{
-    margin-top: 15px;
+    margin: 15px 10px;
     border: 5px solid #d8d7ce;
     border-radius: 10px;
     padding: 15px;
