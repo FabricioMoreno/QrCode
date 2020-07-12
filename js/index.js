@@ -1,5 +1,10 @@
 const generateBtn = document.getElementById('generateBtn')
 const qrGallery = document.getElementById('qr-gallery')
+const myPage =  document.getElementsByTagName('body')[0]
+
+function showDetails(textDetail){
+    swal("Your message was", `${textDetail}`);
+}
 
 function addToGalleryQr(qr){
     const firstChild = qrGallery.firstChild
@@ -12,7 +17,7 @@ function createElementQr(){
     div.setAttribute('id','qr-code')
     div.innerHTML = `
                 <div class="qr-code_image" id="qr-code_image"></div>
-                <button class="qr-code_details-btn">Details</button>
+                <button class="qr-code_details-btn" id='details-btn' data-btn='details'>Details</button>
                 `
     return div
 }
@@ -49,5 +54,15 @@ function enter(e){
         myQr()
     }
 }
+
+function detect(e){
+    const dataset = e.target.dataset
+    if(dataset.btn === 'details'){
+        const textOfQrCode = e.path[1].children[0].title;
+        showDetails(textOfQrCode)
+    }
+    
+}
 generateBtn.addEventListener('click',myQr)
+myPage.addEventListener('click',detect)
 document.addEventListener('keyup',enter)
