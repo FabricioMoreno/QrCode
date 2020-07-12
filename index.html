@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!------------------ QR SCRIPT------------------------->
     <script type="text/javascript" src="./node_modules/qrcodejs/jquery.min.js"></script>
     <script type="text/javascript" src="./node_modules/qrcodejs/qrcode.js"></script>
+    <!------------------ NORMALIZE.CSS------------------------->
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <!------------------ MY STYLES------------------------->
+    <link rel="stylesheet" href="./css/main-page.css">
+    <!------------------ FONTS ------------------------->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <h1 class="header_title">Design your Q</h1>
-    </header>
-
-    <section class="body">
-        <div class="qr-transform">
-            <label class="qr-transform_title" for="text-to-qr">Turn into qr code this: </label>
-            <div class="qr-transform_input">
-                <input type="text" id="text-to-qr">
-                <button class="" id="generateBtn">Generate</button>
-                <p>Eg: URL, Text, Phone Number, Location, ...</p>
+    <div class="main-page">
+        <header class="header">
+            <h1 class="header_title">Make Your Qr Code</h1>
+        </header>
+    
+        <section class="body">
+            <div class="qr-transform">
+                <label class="qr-transform_title" for="text-to-qr">Turn into qr code this: </label>
+                <input class="qr-transform_input" type="text" id="text-to-qr" placeholder="Eg: URL, Text, Phone Number, Location, ...">
+                <button class="qr-transform_btn" id="generateBtn">Generate</button>
             </div>
-        </div>
-    </section>
-
-    <section class="qr-gallery" id="qr-gallery">
-        
-    </section>
+        </section>
+    
+        <section class="qr-gallery" id="qr-gallery">
+            
+        </section>
+    </div>
 
     <!-- MY CODE-->
     <script src="./js/index.js"></script>

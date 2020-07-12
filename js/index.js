@@ -8,10 +8,11 @@ function addToGalleryQr(qr){
 
 function createElementQr(){
     const div = document.createElement('div')
+    div.setAttribute('class','qr-code')
     div.setAttribute('id','qr-code')
     div.innerHTML = `
                 <div class="qr-code_image" id="qr-code_image"></div>
-                <button class="qr-code_details">Details</button>
+                <button class="qr-code_details-btn">Details</button>
                 `
     return div
 }
