@@ -11,14 +11,12 @@ function addToGalleryQr(qr){
     qrGallery.insertBefore(qr,firstChild)
 }
 
-function createElementQr(){
+function createElementQr(text){
     const div = document.createElement('div')
     div.setAttribute('class','qr-code')
     div.setAttribute('id','qr-code')
-    div.innerHTML = `
-                <div class="qr-code_image" id="qr-code_image"></div>
-                <button class="qr-code_details-btn" id='details-btn' data-btn='details'>Details</button>
-                `
+    div.innerHTML = "<div class='qr-code_image' id='qr-code_image'></div>"
+    div.innerHTML +="<button class='qr-code_details-btn' id='details-btn' data-btn='details' data-msg="+`'${text}'`+">Details</button>"
     return div
 }
 
@@ -38,9 +36,10 @@ function checkIfIsVoid (textToConvertQr){
 function myQr(){
     const textToConvertQr = document.getElementById('text-to-qr').value
     if (checkIfIsVoid(textToConvertQr)){
-        const elementQr = createElementQr()
+        const elementQr = createElementQr(textToConvertQr)
         addToGalleryQr(elementQr)
         generateQr(textToConvertQr)
+        elementQr.scrollIntoView(false)
     }
     else
     {
@@ -58,7 +57,7 @@ function enter(e){
 function detect(e){
     const dataset = e.target.dataset
     if(dataset.btn === 'details'){
-        const textOfQrCode = e.path[1].children[0].title;
+        const textOfQrCode = dataset.msg;
         showDetails(textOfQrCode)
     }
     
